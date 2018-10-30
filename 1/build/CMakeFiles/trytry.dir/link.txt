@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/trytry.dir/main_try.cpp.o  -o trytry -rdynamic 
