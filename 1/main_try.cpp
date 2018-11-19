@@ -3,6 +3,13 @@
 #include <stdio.h>
 #include <Eigen/Geometry>
 #include <sys/time.h>
+#include <cmath>
+
+using namespace std;
+
+
+ //////////////////////////////////////////////////////////////////////////////////////// TODO
+            std:: cout << "  :"<<  << " " << std::endl;
 
 
 // #include <Eigen/Core>
@@ -153,5 +160,61 @@
 // }
 
 
-///////////////////////////////?///////////////////////////////////////////////////////////////////这里测试了
+////////////////////////////////////////////////////////////////////////////////
+// int main(int argc,char **argv)
+// {
+// 	Eigen::Vector6d  y;
+// 	y<< 213,234324,3,24,3;
+// 	std::cout << y[3] <<
+// 	return 0;
+
+// }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////测试静态成员变量的访问权限
+
+// class a{
+// 	public:
+// 		static const int ss = 8;
+
+// 		int hh (int hhc){
+// 			return  ss+hhc;
+// 		}
+
+// };
+
+// int main(int argc, char **argv)
+// {
+// 	a ao;
+// 	cout << ao.hh(2) << endl;
+// 	return 0;
+// }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////测试 ?:
+// int main (int argc,char **argv)
+// {
+// 	double a = 1;
+// 	cout << std::asin(a)<<endl;
+
+// 	cout << M_PI << endl;
+
+// 	std::vector<double> d ={124,23213,2,13,21,3,34};
+// 	d[5] = 9999+d[5];
+// 	cout << std::acos(11.2/12) *57.3;	
+// 	return 0;
+
+// }
+
+int main(int argc, char **argv)
+{
+	vector<double> sdf = {213,213,4535,76,456};
+	vector<double> gg = {11,1,111};
+	gg.insert(gg.end(),sdf.begin(),sdf.end());
+	for (unsigned i = 0; i < gg.size(); i++)
+            std::cout << " " << gg[i];
+        std::cout << std::endl;
+	return 0;
+
+}
+
+
 

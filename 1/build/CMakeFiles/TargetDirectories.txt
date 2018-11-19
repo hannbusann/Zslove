@@ -1,3 +1,3 @@
-/home/zjudancer/try/basic/1/build/CMakeFiles/edit_cache.dir
-/home/zjudancer/try/basic/1/build/CMakeFiles/rebuild_cache.dir
-/home/zjudancer/try/basic/1/build/CMakeFiles/trytry.dir
+/home/zjudancer/Zslove/1/build/CMakeFiles/edit_cache.dir
+/home/zjudancer/Zslove/1/build/CMakeFiles/rebuild_cache.dir
+/home/zjudancer/Zslove/1/build/CMakeFiles/trytry.dir

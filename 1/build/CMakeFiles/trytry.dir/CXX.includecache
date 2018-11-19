@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/zjudancer/try/basic/1/main_try.cpp
+/home/zjudancer/Zslove/1/main_try.cpp
 utility
 -
 iostream
@@ -16,6 +16,8 @@ stdio.h
 Eigen/Geometry
 -
 sys/time.h
+-
+cmath
 -
 
 /usr/include/eigen3/Eigen/Cholesky
