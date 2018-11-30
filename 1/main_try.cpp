@@ -1,15 +1,16 @@
 #include <utility>
 #include <iostream>
 #include <stdio.h>
-#include <Eigen/Geometry>
+// #include <Eigen/Geometry>
 #include <sys/time.h>
 #include <cmath>
+#include <thread>
 
 using namespace std;
 
 
- //////////////////////////////////////////////////////////////////////////////////////// TODO
-            std:: cout << "  :"<<  << " " << std::endl;
+// //////////////////////////////////////////////////////////////////////////////////// TODO
+ //           std:: cout << "  :"<<  << " " << std::endl;
 
 
 // #include <Eigen/Core>
@@ -204,17 +205,34 @@ using namespace std;
 
 // }
 
-int main(int argc, char **argv)
-{
-	vector<double> sdf = {213,213,4535,76,456};
-	vector<double> gg = {11,1,111};
-	gg.insert(gg.end(),sdf.begin(),sdf.end());
-	for (unsigned i = 0; i < gg.size(); i++)
-            std::cout << " " << gg[i];
-        std::cout << std::endl;
-	return 0;
+// int main(int argc, char **argv)
+// {
+// 	vector<double> sdf = {213,213,4535,76,456};
+// 	vector<double> gg = {11,1,111};
+// 	gg.insert(gg.end(),sdf.begin(),sdf.end());
+// 	for (unsigned i = 0; i < gg.size(); i++)
+//             std::cout << " " << gg[i];
+//         std::cout << std::endl;
+// 	return 0;
 
+// }
+
+
+
+void output(int i)
+{
+	cout << i << endl;
 }
 
 
+int main(int argc, char **argv)
+{
+	for (unsigned i = 0; i<4;i++)
+	{
+		std::thread t(output,i);
+		t.detach();
+	}
 
+	getchar();
+	return 0;
+}
