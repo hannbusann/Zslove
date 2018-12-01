@@ -5,7 +5,8 @@
 #include <sys/time.h>
 #include <cmath>
 #include <thread>
-
+#include <string>
+#include <stdlib.h>
 using namespace std;
 
 
@@ -219,20 +220,51 @@ using namespace std;
 
 
 
-void output(int i)
-{
-	cout << i << endl;
-}
+// void output(int i)
+// {
+// 	cout << i << endl;
+// }
 
+
+// int main(int argc, char **argv)
+// {
+// 	for (unsigned i = 0; i<4;i++)
+// 	{
+// 		std::thread t(output,i);
+// 		t.detach();
+// 	}
+
+// 	getchar();
+// 	return 0;
+// }
+
+// #define dejavu "daixiahu"
+// using namespace std;
+
+// void oo (string s)
+// {
+// 	cout <<s <<endl;
+// }
+
+// int main()
+// {
+// 	const char* c;
+//     string d(dejavu);
+//     string a = "hello"+d+"fuck";
+//     // string b = "world";
+    
+//     string e;
+//     // e =a+d+b;
+//     c =a.data();
+//     cout <<c <<endl;
+//     return 0;
+// }
 
 int main(int argc, char **argv)
 {
-	for (unsigned i = 0; i<4;i++)
-	{
-		std::thread t(output,i);
-		t.detach();
-	}
-
-	getchar();
-	return 0;
+	cout << getenv("LC_ALL") ;	
 }
+
+
+
+
