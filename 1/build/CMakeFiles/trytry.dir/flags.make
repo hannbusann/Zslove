@@ -6,5 +6,5 @@ CXX_FLAGS =  -pthread   -g -Wall -std=c++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/include/eigen3 
+CXX_INCLUDES = -I/usr/include/modbus -I/usr/include/eigen3 
 

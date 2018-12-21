@@ -3,3 +3,7 @@
 
 CMakeFiles/trytry.dir/main_try.cpp.o
  /home/zjudancer/Zslove/1/main_try.cpp
+ /usr/include/modbus/modbus-rtu.h
+ /usr/include/modbus/modbus-tcp.h
+ /usr/include/modbus/modbus-version.h
+ /usr/include/modbus/modbus.h

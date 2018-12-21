@@ -1,3 +1,6 @@
+#include <iomanip>
+#include <fstream>
+#include <modbus.h>
 #include <utility>
 #include <iostream>
 #include <stdio.h>
@@ -7,12 +10,20 @@
 #include <thread>
 #include <string>
 #include <stdlib.h>
+#include <vector>
 using namespace std;
 
 
 // //////////////////////////////////////////////////////////////////////////////////// TODO
  //           std:: cout << "  :"<<  << " " << std::endl;
 
+
+template<class T>
+    inline void PrintVector(const std::vector<T> &vectorOb) {
+        for (unsigned i = 0; i < vectorOb.size(); i++)
+            std::cout << " " << vectorOb[i];
+        std::cout << std::endl;
+    }
 
 // #include <Eigen/Core>
 
@@ -260,11 +271,91 @@ using namespace std;
 //     return 0;
 // }
 
-int main(int argc, char **argv)
+
+// void dd(vector<double> &as)
+// {
+// 	as[2] ++;
+// }
+// int main(int argc, char **argv)
+// {
+// 	vector<double> a,b;
+// 	a = {321,23,4,324};
+// 	//a.insert(a.begin()+2,565);
+// //	a.erase(a.begin()+1);
+// 	//a = vector<double>(10,2);
+// 	dd(a);
+// 	b = {1,2,3,4};
+
+// 	cout << a[2] << endl;;
+
+// 	cout << std::sin(3.24) <<endl;
+// 	return 0;	
+// }
+
+
+
+
+
+
+
+// int main (int argc, char **argv)
+// {
+// 	FILE *af;
+// 	std::vector<double> row;
+// 	std::vector<std::vector<double>> rc;
+// 	af = fopen("/home/zjudancer/Zslove/1/a.txt", "r");
+// 	int flag = 0;
+// 	while(!feof(af))
+// 	{
+// 		double tmp;
+// 		fscanf(af, "%lf", &tmp);
+
+// 		cout << sizeof(tmp) <<endl;
+// 		if( 6 == flag)
+// 		{
+// 			rc.push_back(row);
+// 			row.clear();
+// 			flag = 1;
+// 			row.push_back(tmp);
+// 		}
+// 		else
+// 		{
+// 			row.push_back(tmp);
+// 			flag++;
+// 		}
+// 	}
+
+// 	fclose(af);
+
+// 	PrintVector(rc[2]);
+
+// }
+
+
+int main(int argc, char ** argv) 
 {
-	cout << getenv("LC_ALL") ;	
+	ifstream af("/home/zjudancer/Zslove/1/a.txt");
+	std::vector<double> row;
+	std::vector<std::vector<double>> rc;
+	int flag = 0;
+	while(!af.eof())
+	{
+		double tmp;
+		af>>tmp;
+		cout <<fixed << setprecision(6) << tmp  <<endl;
+		if( 13 == flag)
+		{
+			rc.push_back(row);
+			row.clear();
+			flag = 1;
+			row.push_back(tmp);
+		}
+		else
+		{
+			row.push_back(tmp);
+			flag++;
+		}
+	}
+	PrintVector(rc[0]);
+	PrintVector(rc[1]);
 }
-
-
-
-
