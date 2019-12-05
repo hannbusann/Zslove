@@ -432,10 +432,14 @@ int main(int argc, char **  argv)
 	// buffer = *(buf+3);
 	// cout << buf[0] << buf[1] << buf[2] << buf[3] << int(buf[4]) << " " << buffer << endl;
 
-	char * pp = "abcd" ;
+	// char * pp = "abcd" ;
 
-	unsigned short aa = ModbusCRC(pp,4);
-	cout << hex << aa << endl;
+	// unsigned short aa = ModbusCRC(pp,4);
+	// cout << hex << aa << endl;
+
+	char buf[6] = "hello";
+	
+	cout << buf << endl;
 
 }
 
