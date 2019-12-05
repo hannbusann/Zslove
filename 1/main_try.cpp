@@ -1,6 +1,5 @@
 #include <iomanip>
 #include <fstream>
-#include <modbus.h>
 #include <utility>
 #include <iostream>
 #include <stdio.h>
@@ -332,30 +331,114 @@ template<class T>
 // }
 
 
-int main(int argc, char ** argv) 
+// int main(int argc, char ** argv) 
+// {
+// 	ifstream af("/home/zjudancer/Zslove/1/a.txt");
+// 	std::vector<double> row;
+// 	std::vector<std::vector<double>> rc;
+// 	int flag = 0;
+// 	while(!af.eof())
+// 	{
+// 		double tmp;
+// 		af>>tmp;
+// 		cout <<fixed << setprecision(6) << tmp  <<endl;
+// 		if( 13 == flag)
+// 		{
+// 			rc.push_back(row);
+// 			row.clear();
+// 			flag = 1;
+// 			row.push_back(tmp);
+// 		}
+// 		else
+// 		{
+// 			row.push_back(tmp);
+// 			flag++;
+// 		}
+// 	}
+// 	PrintVector(rc[0]);
+// 	PrintVector(rc[1]);
+// }
+
+
+
+int Char2Int(const char & buffer)
 {
-	ifstream af("/home/zjudancer/Zslove/1/a.txt");
-	std::vector<double> row;
-	std::vector<std::vector<double>> rc;
-	int flag = 0;
-	while(!af.eof())
-	{
-		double tmp;
-		af>>tmp;
-		cout <<fixed << setprecision(6) << tmp  <<endl;
-		if( 13 == flag)
-		{
-			rc.push_back(row);
-			row.clear();
-			flag = 1;
-			row.push_back(tmp);
-		}
-		else
-		{
-			row.push_back(tmp);
-			flag++;
-		}
-	}
-	PrintVector(rc[0]);
-	PrintVector(rc[1]);
+    int buffer_binary = int(buffer);
+    if (buffer_binary <0)
+    {
+        buffer_binary +=256;
+    }
+    return buffer_binary;
 }
+/**
+ * Nextchar 用于产生char*类型的的下一个或下几个元素
+ * param current_add:指针位置
+ * param whole_length:整个char*的长度
+ * param iterator_position:目前指向的位置是第几个char
+ * param next_count:下几个位置的char
+ * return 这个char元素
+ **/
+char Nextchar(const char * current_add, int whole_length, int iterator_position , int next_count)
+{
+	int here;
+	if(iterator_position+next_count >whole_length)
+	{
+		here = (iterator_position + next_count - whole_length) - iterator_position;
+		return *(current_add+here);
+	}
+	else
+	{
+		return *(current_add+next_count);	
+	}
+}
+
+unsigned short ModbusCRC( char *ptr, unsigned char size)
+{
+	unsigned short a, b, tmp, CRC16;
+	CRC16 = 0xffff;
+	for (a = 0; a < size; a++)
+	{
+		CRC16 = *ptr^CRC16;
+		for (b = 0; b < 8; b++)
+		{
+			tmp = CRC16 & 0x0001;
+			CRC16 = CRC16 >> 1;
+			if (tmp)
+				CRC16 = CRC16 ^ 0xa001;
+		}
+		*ptr++;
+	}
+	return (((CRC16 & 0x00FF) << 8) | ((CRC16 & 0xFF00) >> 8));
+}
+
+int main(int argc, char **  argv)
+{
+	// char buffer;
+
+	// buffer = 0b01000001;
+	// cout << "first buffer corresponding to 65th ASCII: " << buffer << endl;
+
+	// buffer = 0b00100000;
+	// cout << "Here should apears a space:'"<< buffer << "'" << endl;
+	// cout << "the decimal number of a space: "<<int(buffer) << endl;
+	// //when the binary expression of a char highest bit is i
+	// buffer =0b10000001;
+	// cout << "a char expression with unknown ASCII value:" << buffer << endl;
+	// cout << "the value of this 128 turn into:" << int(buffer)+256 << endl;
+	// cout << Char2Int(buffer) << endl;	
+	// //直接cout一个char*的时候，系统是识别\0的，到这个地方就不接着往下了,\0相当于是一个标记,它的ascii码是0x00
+	// char *buf;
+	// buf="china\0china";
+	// buffer = *(buf+3);
+	// cout << buf[0] << buf[1] << buf[2] << buf[3] << int(buf[4]) << " " << buffer << endl;
+
+	char * pp = "abcd" ;
+
+	unsigned short aa = ModbusCRC(pp,4);
+	cout << hex << aa << endl;
+
+}
+
+
+
+
