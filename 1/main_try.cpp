@@ -432,14 +432,35 @@ int main(int argc, char **  argv)
 	// buffer = *(buf+3);
 	// cout << buf[0] << buf[1] << buf[2] << buf[3] << int(buf[4]) << " " << buffer << endl;
 
-	// char * pp = "abcd" ;
+	// char pp[6] = {00001010b, 00001011b, 00111101b, 11110011b, 00100010b, 11101011b};//0x0a, 0x0b ,0x3d, 0xf1 ,0xa3,0x2a};
 
 	// unsigned short aa = ModbusCRC(pp,4);
-	// cout << hex << aa << endl;
+	// cout << hex  << aa << endl;
 
-	char buf[6] = "hello";
+	// // char buf[6] = "hello";
 	
-	cout << buf << endl;
+	// // cout << buf << endl;
+	// // cout <<sizeof(buf) << endl;
+
+	// // char * a = buf;
+	// // cout << a << endl;
+	// char l = 0x97;
+	// char h = 0x1d;
+	// cout <<(unsigned short)(Char2Int(l)) << endl;
+	// cout << 0x0100 << endl;
+	// cout <<(unsigned short)(h)<<endl;
+	// cout << dec << (aa == ((	unsigned short)(Char2Int(l))*0x0100+(unsigned short)(h)))?(1):(0);
+
+
+// a b 0 ef 33 b2
+// 239
+// b2 a b 0 ef 33
+// 61235
+
+	while(1)
+	{
+
+	};
 
 }
 
