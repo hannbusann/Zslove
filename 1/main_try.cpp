@@ -12,44 +12,30 @@
 #include <vector>
 using namespace std;
 
-
 // //////////////////////////////////////////////////////////////////////////////////// TODO
- //           std:: cout << "  :"<<  << " " << std::endl;
+//           std:: cout << "  :"<<  << " " << std::endl;
 
-
-template<class T>
-    inline void PrintVector(const std::vector<T> &vectorOb) {
-        for (unsigned i = 0; i < vectorOb.size(); i++)
-            std::cout << " " << vectorOb[i];
-        std::cout << std::endl;
-    }
+template <class T>
+inline void PrintVector(const std::vector<T> &vectorOb)
+{
+	for (unsigned i = 0; i < vectorOb.size(); i++)
+		std::cout << " " << vectorOb[i];
+	std::cout << std::endl;
+}
 
 // #include <Eigen/Core>
 
-// using namespace std;
-// #include <vector>
-// #include <math.h>
-// using namespace std;
+// using namespace std;lopy(x) <<endl;
+// }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// class test1
+// int main (int argc, char **argv)
 // {
-// private:
-//     vector<int> dd;
-// public:
-//     test1(vector<int>& a): dd(a)
-//     {
-//         for (int i = 0; i < 6; i++)
-//         {
-//             cout << dd.size() << endl;
-//         }
-//         cout << "test1 constructed" << endl;
-//         cout << M_PI << endl;
-//     }
+//     cout << M_PI << endl;
+// }
 
-// };
-
-
+// int main(int argc, char** argv)
+// {
 // class teston
 // {
 // private:
@@ -69,10 +55,8 @@ template<class T>
 //     vector<int> d(b,b+9);
 //     teston objecton(c);
 
-
 // }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 // int main (int argc, char** argv)
 // {
@@ -120,7 +104,7 @@ template<class T>
 
 //     vector<int> a = {21,3,43,21,3,24};
 //  	a.erase(a.begin()+3);
- 	
+
 //  	//a.insert(a.begin(), 90);
 
 //     for(unsigned i=0;i< a.size() ;i++){
@@ -133,7 +117,6 @@ template<class T>
 // {
 // 	printf("Hello world!\n");
 // 	return 0;
-
 
 // }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////这里测试了使用std::move()返回左值右值的区别并不是很大
@@ -154,8 +137,6 @@ template<class T>
 //     return nows;
 // }
 
-
-
 // int main(int argc, char ** argv)
 // {
 // 	Eigen::Isometry3d d = Eigen::Isometry3d::Identity();
@@ -164,13 +145,12 @@ template<class T>
 // 	long t1 = gettimes();
 // 	for (int i =0; i<10000;i++)
 // 	std::cout << createFrame3d().matrix() << std::endl << std::endl;
-	
+
 // 	long t2 = gettimes();
-// 	std::cout << std::endl << std::endl << t2-t1 << std::endl; 
+// 	std::cout << std::endl << std::endl << t2-t1 << std::endl;
 
 // 	return 0;
 // }
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // int main(int argc,char **argv)
@@ -211,7 +191,7 @@ template<class T>
 
 // 	std::vector<double> d ={124,23213,2,13,21,3,34};
 // 	d[5] = 9999+d[5];
-// 	cout << std::acos(11.2/12) *57.3;	
+// 	cout << std::acos(11.2/12) *57.3;
 // 	return 0;
 
 // }
@@ -228,13 +208,10 @@ template<class T>
 
 // }
 
-
-
 // void output(int i)
 // {
 // 	cout << i << endl;
 // }
-
 
 // int main(int argc, char **argv)
 // {
@@ -262,14 +239,13 @@ template<class T>
 //     string d(dejavu);
 //     string a = "hello"+d+"fuck";
 //     // string b = "world";
-    
+
 //     string e;
 //     // e =a+d+b;
 //     c =a.data();
 //     cout <<c <<endl;
 //     return 0;
 // }
-
 
 // void dd(vector<double> &as)
 // {
@@ -288,14 +264,8 @@ template<class T>
 // 	cout << a[2] << endl;;
 
 // 	cout << std::sin(3.24) <<endl;
-// 	return 0;	
+// 	return 0;
 // }
-
-
-
-
-
-
 
 // int main (int argc, char **argv)
 // {
@@ -330,8 +300,7 @@ template<class T>
 
 // }
 
-
-// int main(int argc, char ** argv) 
+// int main(int argc, char ** argv)
 // {
 // 	ifstream af("/home/zjudancer/Zslove/1/a.txt");
 // 	std::vector<double> row;
@@ -359,17 +328,15 @@ template<class T>
 // 	PrintVector(rc[1]);
 // }
 
-
-
-int Char2Int(const char & buffer)
-{
-    int buffer_binary = int(buffer);
-    if (buffer_binary <0)
-    {
-        buffer_binary +=256;
-    }
-    return buffer_binary;
-}
+// int Char2Int(const char &buffer)
+// {
+// 	int buffer_binary = int(buffer);
+// 	if (buffer_binary < 0)
+// 	{
+// 		buffer_binary += 256;
+// 	}
+// 	return buffer_binary;
+// }
 /**
  * Nextchar 用于产生char*类型的的下一个或下几个元素
  * param current_add:指针位置
@@ -378,40 +345,47 @@ int Char2Int(const char & buffer)
  * param next_count:下几个位置的char
  * return 这个char元素
  **/
-char Nextchar(const char * current_add, int whole_length, int iterator_position , int next_count)
+// char Nextchar(const char * current_add, int whole_length, int iterator_position , int next_count)
+// {
+// 	int here;
+// 	if(iterator_position+next_count >whole_length)
+// 	{
+// 		here = (iterator_position + next_count - whole_length) - iterator_position;
+// 		return *(current_add+here);
+// 	}
+// 	else
+// 	{
+// 		return *(current_add+next_count);
+// 	}
+// }
+
+// unsigned short ModbusCRC( char *ptr, unsigned char size)
+// {
+// 	unsigned short a, b, tmp, CRC16;
+// 	CRC16 = 0xffff;
+// 	for (a = 0; a < size; a++)
+// 	{
+// 		CRC16 = *ptr^CRC16;
+// 		for (b = 0; b < 8; b++)
+// 		{
+// 			tmp = CRC16 & 0x0001;
+// 			CRC16 = CRC16 >> 1;
+// 			if (tmp)
+// 				CRC16 = CRC16 ^ 0xa001;
+// 		}
+// 		*ptr++;
+// 	}
+// 	return (((CRC16 & 0x00FF) << 8) | ((CRC16 & 0xFF00) >> 8));
+// }
+
+float hi(int * k)
 {
-	int here;
-	if(iterator_position+next_count >whole_length)
-	{
-		here = (iterator_position + next_count - whole_length) - iterator_position;
-		return *(current_add+here);
-	}
-	else
-	{
-		return *(current_add+next_count);	
-	}
+	cout << k[1];
+	cout << k[2];
+	cout << k[0];
 }
 
-unsigned short ModbusCRC( char *ptr, unsigned char size)
-{
-	unsigned short a, b, tmp, CRC16;
-	CRC16 = 0xffff;
-	for (a = 0; a < size; a++)
-	{
-		CRC16 = *ptr^CRC16;
-		for (b = 0; b < 8; b++)
-		{
-			tmp = CRC16 & 0x0001;
-			CRC16 = CRC16 >> 1;
-			if (tmp)
-				CRC16 = CRC16 ^ 0xa001;
-		}
-		*ptr++;
-	}
-	return (((CRC16 & 0x00FF) << 8) | ((CRC16 & 0xFF00) >> 8));
-}
-
-int main(int argc, char **  argv)
+int main(int argc, char **argv)
 {
 	// char buffer;
 
@@ -425,7 +399,7 @@ int main(int argc, char **  argv)
 	// buffer =0b10000001;
 	// cout << "a char expression with unknown ASCII value:" << buffer << endl;
 	// cout << "the value of this 128 turn into:" << int(buffer)+256 << endl;
-	// cout << Char2Int(buffer) << endl;	
+	// cout << Char2Int(buffer) << endl;
 	// //直接cout一个char*的时候，系统是识别\0的，到这个地方就不接着往下了,\0相当于是一个标记,它的ascii码是0x00
 	// char *buf;
 	// buf="china\0china";
@@ -438,7 +412,7 @@ int main(int argc, char **  argv)
 	// cout << hex  << aa << endl;
 
 	// // char buf[6] = "hello";
-	
+
 	// // cout << buf << endl;
 	// // cout <<sizeof(buf) << endl;
 
@@ -451,19 +425,22 @@ int main(int argc, char **  argv)
 	// cout <<(unsigned short)(h)<<endl;
 	// cout << dec << (aa == ((	unsigned short)(Char2Int(l))*0x0100+(unsigned short)(h)))?(1):(0);
 
+	// a b 0 ef 33 b2
+	// 239
+	// b2 a b 0 ef 33
+	// 61235
+	// int now_pulse = -34;
+	// int decode[4];
+	// decode[0] = now_pulse / 1000;
+	// decode[1] = (now_pulse - decode[0] * 1000) / 100;
+	// decode[2] = (now_pulse - decode[0] * 1000 - decode[1] * 100) / 10;
+	// decode[3] = (now_pulse - decode[0] * 1000 - decode[1] * 100 - decode[2] * 10);
+	// cout << decode[0]<< " " << decode[1]<< " " << decode[2]<< " " << decode[3];
 
-// a b 0 ef 33 b2
-// 239
-// b2 a b 0 ef 33
-// 61235
-
-	while(1)
-	{
-
-	};
-
-}
-
-
-
-
+	int a=1;
+	int b =2;
+	int c=3;
+	int k=3;
+	int data[k]={a,b,c};
+	hi(data);
+}	
