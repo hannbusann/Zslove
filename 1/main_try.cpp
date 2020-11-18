@@ -437,10 +437,9 @@ int main(int argc, char **argv)
 	// decode[3] = (now_pulse - decode[0] * 1000 - decode[1] * 100 - decode[2] * 10);
 	// cout << decode[0]<< " " << decode[1]<< " " << decode[2]<< " " << decode[3];
 
-	int a=1;
-	int b =2;
-	int c=3;
-	int k=3;
-	int data[k]={a,b,c};
-	hi(data);
+	double b = 3.4;
+	double k = 3;
+	vector<double> a= {1,b*k};
+	cout << "hello0" << endl;
+	cout << a[0] << a[1] << endl;
 }	
