@@ -1,0 +1,1 @@
+SUBSYSTEM=="tty", KERNEL=="ttyUSB[0-9]*", MODE="0666", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", SYMLINK+="Lower", RUN+="/home/fw/donttouch/change_timer.sh %k"
